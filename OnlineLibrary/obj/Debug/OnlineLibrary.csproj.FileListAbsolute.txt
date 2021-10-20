@@ -1,7 +1,0 @@
-D:\C# Basics\OnlineLibrary\OnlineLibrary\bin\Debug\OnlineLibrary.exe.config
-D:\C# Basics\OnlineLibrary\OnlineLibrary\bin\Debug\OnlineLibrary.exe
-D:\C# Basics\OnlineLibrary\OnlineLibrary\bin\Debug\OnlineLibrary.pdb
-D:\C# Basics\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.AssemblyReference.cache
-D:\C# Basics\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.CoreCompileInputs.cache
-D:\C# Basics\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.exe
-D:\C# Basics\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.pdb
