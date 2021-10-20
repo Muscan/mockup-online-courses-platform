@@ -1,24 +1,19 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OnlineLibrary.Model;
-using System;
+﻿using OnlineLibrary.Model;
+using Xunit;
 
 namespace UnitTestsForOnlineLibrary
 {
-    [TestClass]
     public class BookUnitTest
     {
-        [TestMethod]
+        [Fact]
         public void BookTest()
         {
             Book book = new Book(1, 1, "Venus");
-            Assert.AreEqual(1, book.Id);
-            Assert.AreEqual(1, book.StudentId);
-            Assert.AreEqual("Venus", book.BookName);
+            Assert.Equal(1, book.Id);
+            Assert.Equal(1, book.StudentId);
+            Assert.Equal("Venus", book.BookName);
 
-            Assert.AreEqual("Id 1Student ID 1Book Name Venus", book.Desc());
+            Assert.Equal("Id 1Student ID 1Book Name Venus", book.Desc());
         }
-
-      
-        
     }
 }
