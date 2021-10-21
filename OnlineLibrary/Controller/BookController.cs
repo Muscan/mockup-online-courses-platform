@@ -36,6 +36,7 @@ namespace OnlineLibrary.Controller
             if (indexOfBook == -1)
             {
                 this.books.Add(book);
+                this.SaveToFile();
                 Console.WriteLine("Book added");
                 return true;
             }
@@ -65,7 +66,7 @@ namespace OnlineLibrary.Controller
                 int studentId = int.Parse(bookForFile[1]);
                 string bookName = bookForFile[2];
 
-                Book book = new Book(3, 3, "Spark");
+                Book book = new Book(id, studentId, bookName);
                 books.Add(book);
                 line = reader.ReadLine();
 

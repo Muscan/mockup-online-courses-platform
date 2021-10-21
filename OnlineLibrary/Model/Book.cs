@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineLibrary.Model
 {
@@ -12,7 +8,9 @@ namespace OnlineLibrary.Model
         private int studentId;
         private string bookName;
 
-
+        public Book()
+        {
+        }
         public Book(int id, int studentId, string bookName)
         {
             this.id = id;
@@ -21,8 +19,6 @@ namespace OnlineLibrary.Model
         }
 
         //proprietati
-
-
         public int Id
         {
             get { return id; }
