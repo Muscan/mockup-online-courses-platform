@@ -1,4 +1,1 @@
-1,1,Venus
-2,2,Moronetii
-10,10,Shakez
 

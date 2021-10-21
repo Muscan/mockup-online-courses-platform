@@ -3,8 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace OnlineLibrary.Controller
 {
@@ -14,10 +13,13 @@ namespace OnlineLibrary.Controller
         public BookController()
         {
             books = new List<Book>();
-
+            readBookTxt();
         }
         //Index of the book
-
+        public List<Book> getAllBooks()
+        {
+            return books;
+        }
         public int bookIndex(int id)
         {
             for (int i = 0; i < books.Count(); i++)
@@ -37,14 +39,65 @@ namespace OnlineLibrary.Controller
             {
                 this.books.Add(book);
                 this.SaveToFile();
-                Console.WriteLine("Book added");
+                Console.WriteLine("Book added:" + book.Id + "," + book.StudentId + "," + book.BookName);
                 return true;
             }
             Console.WriteLine("Book exists");
             return false;
         }
 
+        public bool updateBook(Book book, int newId, int newStudentId, string newBookName)
+        {
+            int index = bookIndex(book.Id);
 
+            if (index != -1) //check if the book does not exists in the list 
+            {
+                books[index].Id = newId;
+                books[index].StudentId = newStudentId;
+                books[index].BookName = newBookName;
+                SaveToFile();
+                Console.WriteLine("Book updated:" + book.Id + "," + book.StudentId + "," + book.BookName);
+                return true;
+            }
+            Console.WriteLine("Book not found.");
+            return false;
+        }
+
+        public bool UpdateId(Book book, int newId)
+        {
+            int index = bookIndex(book.Id);
+            if (index != -1)
+            {
+                books[index].Id = newId;
+                SaveToFile();
+                Console.WriteLine("Book updated:" + book.Id);
+                return true;
+            }
+            Console.WriteLine("Book not found.");
+            return false;
+        }
+
+        public void Delete(int id)
+        {
+            int index = bookIndex(id);
+            if (index != -1)
+            {
+                books.RemoveAt(index);
+                Console.WriteLine("Book deleted" );
+
+            }
+            else
+            {
+                Console.WriteLine("Not deleted ");
+            }
+            SaveToFile();
+        }
+
+        public void DeleteAll()
+        {
+            books.Clear();
+            SaveToFile();
+        }
 
         public void SaveToFile()
         {

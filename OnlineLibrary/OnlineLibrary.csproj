@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BookController.cs" />
+    <Compile Include="Controller\CourseController.cs" />
+    <Compile Include="Controller\EnrolmentController.cs" />
+    <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Enrolment.cs" />
@@ -56,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\Books.txt" />
+    <Content Include="Files\Course.txt" />
+    <Content Include="Files\Enrolment.txt" />
+    <Content Include="Files\Student.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
