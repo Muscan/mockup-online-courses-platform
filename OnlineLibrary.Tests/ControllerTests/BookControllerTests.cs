@@ -96,5 +96,24 @@ namespace UnitTestsForOnlineLibrary
             Console.WriteLine(books.toStringObjectBookFile());
             books.DeleteAll();
         }
+
+        [Fact]
+        public void AddThreeBooksIndexMatch()
+        {
+            BookController books = new BookController();
+
+            Book book = new Book(1, 1, "FirstBook ");
+            Book book2 = new Book(2, 2, "SecondBook ");
+            Book book3 = new Book(3, 10, "ThirdBook");
+            books.Add(book);
+            books.Add(book2);
+            books.Add(book3);
+            //Check index against the book id(First case is "FirstBook")
+            Assert.Equal(0, books.bookIndex(1));
+            Assert.Equal(1, books.bookIndex(2));
+            Assert.Equal(2, books.bookIndex(3));
+
+            books.DeleteAll();
+        }
     }
 }
