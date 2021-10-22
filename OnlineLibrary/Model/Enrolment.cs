@@ -6,7 +6,49 @@ using System.Threading.Tasks;
 
 namespace OnlineLibrary.Model
 {
-    class Enrolment
+    public class Enrolment
     {
+        private int studentId;
+        private int courseId;
+        private int createdAt;//timestamp?
+
+        public Enrolment()
+        {
+
+        }
+        public Enrolment(int studentId, int courseId, int createdAt)
+        {
+            this.studentId = studentId;
+            this.courseId = courseId;
+            this.createdAt = createdAt;
+        }
+        public int StudentId
+        {
+            get { return studentId; }
+            set { this.studentId = value; }
+        }
+        public int CourseId
+        {
+            get { return courseId; }
+            set { this.courseId = value; }
+        }
+        
+        public int CreatedAt
+        {
+            get { return createdAt; }
+            set { this.createdAt = value; }
+        }
+        public String EnrolmentDesc()
+        {
+            string enrolmentPropDesc = "";
+            enrolmentPropDesc += "student id " + this.studentId + "course id" + this.courseId + "created at " + this.createdAt;
+            return enrolmentPropDesc;
+        }
+
+        public String toSaveEnrolment()
+        {
+            return studentId + "," + courseId + "," + createdAt;
+        }
+
     }
 }

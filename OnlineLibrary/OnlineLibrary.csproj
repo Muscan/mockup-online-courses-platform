@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\Books.txt" />
-    <Content Include="Files\Course.txt" />
+    <Content Include="Files\Courses.txt" />
     <Content Include="Files\Enrolment.txt" />
     <Content Include="Files\Student.txt" />
   </ItemGroup>

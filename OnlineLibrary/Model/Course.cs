@@ -6,7 +6,51 @@ using System.Threading.Tasks;
 
 namespace OnlineLibrary.Model
 {
-    class Course
+    public class Course
     {
-    }
+        private int id;
+        private string name;
+        private string department;
+
+        public Course()
+        {
+        }
+        public Course(int id, string name, string department)
+        {
+            this.id = id;
+            this.name = name;
+            this.department = department;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { this.id = value; }
+        }
+
+        public String Name
+        {
+            get { return name; }
+            set { this.name = value; }
+        }
+        
+        public String Department
+        {
+            get { return department; }
+            set { this.department = value; }
+        }
+
+        public String CourseDesc()
+        {
+            string coursePropDesc = "";
+            coursePropDesc += "Id " + this.id + "Department name " + this.name + "department " + this.department;
+            return coursePropDesc;
+        }
+
+        public String toSaveCourse()
+        {
+            return id + "," + name + "," + department;
+        }
+
+    }    
 }
