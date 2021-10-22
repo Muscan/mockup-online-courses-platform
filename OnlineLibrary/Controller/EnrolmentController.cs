@@ -33,7 +33,7 @@ namespace OnlineLibrary.Controller
         }
         public void saveToFileEnrolment()
         {
-            StreamWriter write = new StreamWriter(@"D:\C# Basics\OnlineLibrary\OnlineLibrary\Files\Enrolment.txt");
+            StreamWriter write = new StreamWriter(@"D:\C# Basics\OnlineLibrary\OnlineLibrary\Files\Enrolments.txt");
             write.WriteLine(this.toStringObjectEnrolmentFile());
             write.Close();
         }
@@ -48,7 +48,7 @@ namespace OnlineLibrary.Controller
         }
         public void loadEnrolment()
         {
-            StreamReader reader = new StreamReader(@"D:\C# Basics\OnlineLibrary\OnlineLibrary\Files\Enrolment.txt");
+            StreamReader reader = new StreamReader(@"D:\C# Basics\OnlineLibrary\OnlineLibrary\Files\Enrolments.txt");
             String line = "";
             line = reader.ReadLine();
             while (line != "" && line != null)

@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControllerTests\StudentControllerTests.cs" />
     <Compile Include="ControllerTests\EnrolmentControllerTests.cs" />
     <Compile Include="ControllerTests\CourseControllerTests.cs" />
     <Compile Include="ControllerTests\BookControllerTests.cs" />

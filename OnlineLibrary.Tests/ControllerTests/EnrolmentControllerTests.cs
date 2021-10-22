@@ -11,15 +11,6 @@ namespace UnitTestsForOnlineLibrary
         [Fact]
         public void EnrolmentControllerAddAreAdded()
         {
-            EnrolmentController econtrol = new EnrolmentController();
-
-            Enrolment enr = new Enrolment(1, 2, 2021);
-          
-            econtrol.Add(enr);
-
-            
         }
-      
-
     }
 }

@@ -60,8 +60,8 @@
   <ItemGroup>
     <Content Include="Files\Books.txt" />
     <Content Include="Files\Courses.txt" />
-    <Content Include="Files\Enrolment.txt" />
-    <Content Include="Files\Student.txt" />
+    <Content Include="Files\Enrolments.txt" />
+    <Content Include="Files\Students.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

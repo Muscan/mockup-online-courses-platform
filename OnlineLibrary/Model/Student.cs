@@ -52,7 +52,7 @@ namespace OnlineLibrary.Model
             return studentPropDesc;
         }
 
-        public String toSaveBook()
+        public String toSaveStudent()
         {
             return id + "," + lastName + "," + email+ "," + age;
         }
