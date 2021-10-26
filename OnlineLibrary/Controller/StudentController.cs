@@ -118,6 +118,22 @@ namespace OnlineLibrary.Controller
             students.Clear();
             saveStudent();
         }
+        //(int id, string lastName, string email, int age)
+        public Student returnStudent(int id, string lastName, string email, int age)
+        {
+            for (int i = 0; i < students.Count; i++)
+
+            {
+                if (students[i].Id.Equals(id)
+                 && students[i].LastName.Equals(lastName)
+                 && students[i].Email.Equals(email)
+                 && students[i].Age.Equals(age))
+                {
+                    return students[i];
+                }
+            }
+            return null;
+        }
 
     }
 }
