@@ -48,7 +48,7 @@ namespace OnlineLibrary.Model
         public String StudentDesc()
         {
             string studentPropDesc = "";
-            studentPropDesc += "Id " + this.id + "last name " + this.lastName + "email " + this.email + "age " + this.age;
+            studentPropDesc += "Id: " + this.id + ", last name: " + this.lastName + ", email: " + this.email + ", age: " + this.age;
             return studentPropDesc;
         }
 

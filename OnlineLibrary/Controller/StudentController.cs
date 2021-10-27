@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineLibrary.Controller
 {
-    
+
     public class StudentController
     {
 
@@ -52,7 +52,7 @@ namespace OnlineLibrary.Controller
         }
         public void readStudent()
         {
-            StreamReader  reader = new StreamReader(@"D:\C# Basics\OnlineLibrary\OnlineLibrary\Files\Students.txt");
+            StreamReader reader = new StreamReader(@"D:\C# Basics\OnlineLibrary\OnlineLibrary\Files\Students.txt");
             String line = "";
             line = reader.ReadLine();
             while (line != "" && line != null)
@@ -66,11 +66,13 @@ namespace OnlineLibrary.Controller
                 students.Add(student);
                 line = reader.ReadLine();
             }
+            reader.Close();
         }
         public bool AddStudent(Student student)
         {
             int index = studentIndex(student.Id);
-            if (index == 1)
+            //adds if no other student is in the list
+            if (index == -1)
             {
                 this.students.Add(student);
                 this.saveStudent();
@@ -91,26 +93,29 @@ namespace OnlineLibrary.Controller
                 students[index].Email = newEmail;
                 students[index].Age = newAge;
                 saveStudent();
-                Console.WriteLine("Student updated: " +student.Id);
+                Console.WriteLine("Student updated: " + student.Id);
                 return true;
             }
             Console.WriteLine("Student not found!");
             return false;
         }
 
-        public void deleteStudent(int id)
+        public bool deleteStudent(int id)
         {
             int index = studentIndex(id);
             if (index != -1)
             {
                 students.RemoveAt(index);
                 Console.WriteLine("Student deleted ");
+                saveStudent();
+                return true;
             }
             else
             {
                 Console.WriteLine("Student not deleted ");
+                return false;
             }
-            saveStudent();
+          
 
         }
         public void DeleteAll()
@@ -134,6 +139,15 @@ namespace OnlineLibrary.Controller
             }
             return null;
         }
+        public String displayAllStudents()
+        {
+            string allStudents = "";
+            for (int i = 0; i < students.Count; i++)
 
+            {
+                allStudents += students[i].StudentDesc() + "\n";
+            }
+            return allStudents;
+        }
     }
 }

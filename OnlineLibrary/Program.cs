@@ -12,12 +12,10 @@ namespace OnlineLibrary
     {
         static void Main(string[] args)
         {
-            BookController booksController = new BookController();
-            Book book = new Book(1,1,"Found letter");
-            booksController.Add(book);
-
-            Console.WriteLine(book.Desc());
-            Console.ReadLine();
+            /*StudentController controller = new StudentController();
+            Student s1 = new Student(1, "Rodni", "email@email.com", 20);
+            controller.AddStudent(s1);
+            Console.WriteLine(controller.displayAllStudents());*/
         }
     }
 }

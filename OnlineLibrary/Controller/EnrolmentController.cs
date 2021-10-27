@@ -62,6 +62,7 @@ namespace OnlineLibrary.Controller
                 enrolments.Add(enrolment);
                 line = reader.ReadLine();
             }
+            reader.Close();
             
         }
         public bool Add(Enrolment enrolment)
@@ -97,6 +98,51 @@ namespace OnlineLibrary.Controller
         {
             enrolments.Clear();
             saveToFileEnrolment();
+        }
+
+
+        public String displayAllEnrolments()
+        {
+            string allStudents = "";
+            for (int i = 0; i < enrolments.Count; i++)
+
+            {
+                allStudents += enrolments[i].EnrolmentDesc() + "\n";
+            }
+            return allStudents;
+        }
+
+        public Enrolment returnEnrolment(int studentId, int courseID, int createdAt)
+        {
+            for (int i = 0; i < enrolments.Count; i++)
+
+            {
+                if (enrolments[i].StudentId.Equals(studentId)
+                 && enrolments[i].CourseId.Equals(courseID)
+                 && enrolments[i].CreatedAt.Equals(createdAt))
+                { 
+                    return enrolments[i];
+                }
+            }
+            return null;
+        }
+        public bool deleteEnrolment(int id)
+        {
+            int index = enrolmentIndex(id);
+            if (index != -1)
+            {
+                enrolments.RemoveAt(index);
+                Console.WriteLine("Enrolment deleted ");
+                saveToFileEnrolment();
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Enrolment not deleted ");
+                return false;
+            }
+
+
         }
     }
 }
