@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace OnlineLibrary.Controller
 {
     public class CourseController
-    {//(int studentId, int courseId, int createdAt)
+    {
         private List<Course> courses;
         public CourseController()
         {
@@ -52,9 +52,8 @@ namespace OnlineLibrary.Controller
                 Course course = new Course(id, name, department);
                 courses.Add(course);
                 line = reader.ReadLine();
-                    
-
             }
+            reader.Close();
         }
         public bool Add(Course course)
         {
@@ -85,19 +84,22 @@ namespace OnlineLibrary.Controller
             Console.WriteLine("Course not found");
             return false;
         }
-        public void deleteCourse(int id)
+        public bool deleteCourse(int id)
         {
             int index = courseIndex(id);
             if (index != -1)
             {
                 courses.RemoveAt(index);
                 Console.WriteLine("Course deleted ");
+                CourseSaveToFile();
+                return true;
             }
             else
             {
                 Console.WriteLine("course not deleted ");
+                return false;
             }
-            CourseSaveToFile();
+      
         }
         public void DeleteAll()
         {
@@ -114,6 +116,33 @@ namespace OnlineLibrary.Controller
             }
             return courseData;
 
+        }
+
+        public String displayAllCourses()
+        {
+            string allCourses = "";
+            for (int i = 0; i < courses.Count; i++)
+
+            {
+                allCourses += courses[i].CourseDesc() + "\n";
+            }
+            return allCourses;
+        }
+
+        public Course returnCourses(int id, string name, string department)
+        {
+            for (int i = 0; i < courses.Count; i++)
+
+            {
+                if (courses[i].Id.Equals(id)
+                 && courses[i].Name.Equals(name)
+                 && courses[i].Department.Equals(department))
+                 
+                {
+                    return courses[i];
+                }
+            }
+            return null;
         }
     }
 }
