@@ -3,11 +3,19 @@ using OnlineLibrary.Model;
 using System;
 using System.Collections.Generic;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace UnitTestsForOnlineLibrary
 {
     public class BookControllerTests
     {
+        private readonly ITestOutputHelper output;
+        //https://xunit.net/docs/capturing-output //instead of Console.WriteLine
+
+        public BookControllerTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
         [Fact]
         public void BookControllerAddAreAdded()
         {
@@ -70,7 +78,7 @@ namespace UnitTestsForOnlineLibrary
                 bool updated = books.updateBook(allBooks[i], i + 100, i + 100, "Harbe" + i);
                 Assert.True(updated);
             }
-            Console.WriteLine(books.toStringObjectBookFile());
+            output.WriteLine(books.toStringObjectBookFile());
             books.DeleteAll();
         }
 
@@ -93,7 +101,7 @@ namespace UnitTestsForOnlineLibrary
                 Console.WriteLine(updated);
                 Assert.True(updated);
             }
-            Console.WriteLine(books.toStringObjectBookFile());
+            output.WriteLine(books.toStringObjectBookFile());
             books.DeleteAll();
         }
 
