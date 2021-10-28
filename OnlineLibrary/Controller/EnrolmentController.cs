@@ -144,5 +144,15 @@ namespace OnlineLibrary.Controller
 
 
         }
+
+
+
+        ///functie ce returneaza toate enrolmenturile unui student 
+        ///5-->functionalitati  pe care ar trbeui sa le contina aplicatia 
+        /*adaugat private EnrolmentController enrolmentController;
+         private CourseController courseController;
+         private BookController bookController;
+        - Adaugat in constructor
+        */
     }
 }
