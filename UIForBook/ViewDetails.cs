@@ -81,9 +81,9 @@ namespace UIForBook
             MessageBox.Show("Eu sunt Mihai ");
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
-
-       
+        }
     }
 }

@@ -45,6 +45,7 @@ namespace UIForBook
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // btnExit
             // 
@@ -56,14 +57,14 @@ namespace UIForBook
             this.btnExit.Text = "EXIT";
             this.btnExit.UseVisualStyleBackColor = false;
             // 
-            // Student2
+            // ViewDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.listView1);
-            this.Name = "Student2";
+            this.Name = "ViewDetails";
             this.Text = "Student2";
             this.Load += new System.EventHandler(this.Student2_Load);
             this.ResumeLayout(false);
