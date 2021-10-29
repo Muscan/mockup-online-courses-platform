@@ -1,7 +1,7 @@
 ﻿
 namespace UIForBook
 {
-    partial class StudentDetails2
+    partial class Details
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,14 @@ namespace UIForBook
         {
             this.SuspendLayout();
             // 
-            // StudentDetails2
+            // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "StudentDetails2";
-            this.Text = "StudentDetails2";
-            this.Load += new System.EventHandler(this.StudentDetails2_Load);
+            this.Name = "Details";
+            this.Text = "Details";
+            this.Load += new System.EventHandler(this.Details_Load);
             this.ResumeLayout(false);
 
         }

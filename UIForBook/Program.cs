@@ -17,7 +17,7 @@ namespace UIForBook
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StudentDetails2());
+            Application.Run(new ViewCourses());
         }
     }
 }

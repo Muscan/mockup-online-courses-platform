@@ -7,27 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//Entry program
 namespace UIForBook
 {
-    public partial class ViewDetails : Form
+    public partial class Details : Form
     {
-
         private Button btnView;
         private Button btnDetails;
         private Button btnBooks;
         private Button btnBack;
         private Button btnClose;
-        public ViewDetails()
+        public Details()
         {
             InitializeComponent();
+
+
             btnView = new Button();
-            btnView.Location = new Point(30,30);
+            btnView.Location = new Point(30, 30);
             btnView.Text = "View Courses";
             btnView.Width = 120;
             btnView.Height = 40;
 
-            btnView.Click += exemplu_Click;
+            //btnView.Click += exemplu_Click;
 
             this.Controls.Add(btnView);
 
@@ -64,26 +65,13 @@ namespace UIForBook
             btnClose.BackColor = Color.PaleVioletRed;
             this.Controls.Add(btnClose);
 
-        }
-        
-
-        private void Student2_Load(object sender, EventArgs e)
-        {
 
         }
 
-
-
-        public void exemplu_Click(object sender ,EventArgs e)
-        {
-
-
-            MessageBox.Show("Eu sunt Mihai ");
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Details_Load(object sender, EventArgs e)
         {
 
         }
     }
+
 }
