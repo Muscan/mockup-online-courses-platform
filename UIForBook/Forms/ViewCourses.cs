@@ -1,13 +1,6 @@
 ﻿using OnlineLibrary.Controller;
 using OnlineLibrary.Model;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UIForBook
@@ -20,28 +13,13 @@ namespace UIForBook
         
         public ViewCourses()
         {
-
             InitializeComponent();
-
-
             controlCourse = new CourseController();
-
-
             list = new ListView();
-
             this.Controls.Add(list);
-
-
             list.Width = this.Width;
-         
-
-
-
-
             createTable();
-          
         }
-
 
         public void createTable()
         {    //(int id, string name, string department)
@@ -55,32 +33,15 @@ namespace UIForBook
             list.Columns.Add("Name ", 100, HorizontalAlignment.Center);
             list.Columns.Add("Department ", 100, HorizontalAlignment.Right);
 
-
             List<Course> l = controlCourse.getAllCourses();
-
-
-           
-
-
             foreach(Course course in l)
             {
                 ListViewItem row = new ListViewItem();
-
-
-
                 row.Text = course.Id.ToString();
                 row.SubItems.Add(course.Name);
                 row.SubItems.Add(course.Department);
-
-
                 list.Items.Add(row);
-
-         
-                
             }
-
         }
-
-
     }
 }

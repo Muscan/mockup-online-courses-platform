@@ -22,6 +22,7 @@ namespace UnitTestsForOnlineLibrary
             for (int i = 0; i < 10; i++)
             {
                 Enrolment s1 = new Enrolment();
+                s1.Id = i;
                 s1.StudentId = i;
                 s1.CourseId =  i;
                 s1.CreatedAt = i;
@@ -34,28 +35,28 @@ namespace UnitTestsForOnlineLibrary
         public void AddEnrolmentIsDisplayedAndDeleted()
         {
             EnrolmentController controller = new EnrolmentController();
-            Enrolment s1 = new Enrolment(1, 12, 20);
+            Enrolment s1 = new Enrolment(1, 10, 12, 20);
             controller.Add(s1);
             output.WriteLine(controller.displayAllEnrolments());
-            Assert.Equal(s1, controller.returnEnrolment(1, 12, 20));
+            Assert.Equal(s1, controller.returnEnrolment(1,10, 12, 20));
             controller.DeleteAll();//it should delete enrolment with id 1
         }
 
         [Fact]
         public void AddUpdateDelete10Enrolments()
-        //(int studentId, int courseId, int createdAt)
+        //(int id, int studentId, int courseId, int createdAt)
         {
             EnrolmentController controller = Add10Enrs();
             List<Enrolment> listEnrolments = controller.getAllEnrolments();
             for (int i = 0; i < 10; i++)
             {   //the updateStudent returns bool => updateEnrolment<list> it should be saved in a object of same type(bool in this case)
-                bool isUpdated = controller.updateEnrolment(listEnrolments[i], i + 10, i + 10, i + 10);
+                bool isUpdated = controller.updateEnrolment(listEnrolments[i], i+10, i + 10, i + 10, i + 10);
                 Assert.True(isUpdated);
                 output.WriteLine(listEnrolments[i].EnrolmentDesc());
             }
             for (int i = 0; i < 10; i++)
             {
-                Assert.Equal(listEnrolments[i], controller.returnEnrolment(i + 10, i + 10, i + 10));
+                Assert.Equal(listEnrolments[i], controller.returnEnrolment(i + 10, i + 10, i + 10, i + 10));
             }
             controller.DeleteAll();
         }

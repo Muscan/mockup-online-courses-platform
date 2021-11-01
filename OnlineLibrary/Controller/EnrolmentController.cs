@@ -24,7 +24,7 @@ namespace OnlineLibrary.Controller
         {
             for (int i = 0; i < enrolments.Count(); i++)
             {
-                if (enrolments[i].StudentId == id)
+                if (enrolments[i].Id == id)
                 {
                     return i;
                 }
@@ -55,10 +55,11 @@ namespace OnlineLibrary.Controller
             {
                 String[] enrolmentForFile = line.Split(',');
                 //(int studentId, int courseId, int createdAt)
-                int studentId = int.Parse(enrolmentForFile[0]);
-                int courseId = int.Parse(enrolmentForFile[1]);
-                int createdAt = int.Parse(enrolmentForFile[2]);
-                Enrolment enrolment = new Enrolment(studentId, courseId, createdAt);
+                int Id = int.Parse(enrolmentForFile[0]);
+                int studentId = int.Parse(enrolmentForFile[1]);
+                int courseId = int.Parse(enrolmentForFile[2]);
+                int createdAt = int.Parse(enrolmentForFile[3]);
+                Enrolment enrolment = new Enrolment(Id, studentId, courseId, createdAt);
                 enrolments.Add(enrolment);
                 line = reader.ReadLine();
             }
@@ -67,7 +68,7 @@ namespace OnlineLibrary.Controller
         }
         public bool Add(Enrolment enrolment)
         {
-            int index = enrolmentIndex(enrolment.StudentId);
+            int index = enrolmentIndex(enrolment.Id);
             if (index == -1)
             {
                 this.enrolments.Add(enrolment);
@@ -78,16 +79,17 @@ namespace OnlineLibrary.Controller
             Console.WriteLine("Enrolment exists ");
             return false;
         }
-        public bool updateEnrolment(Enrolment enr, int newStudentId, int newCourseId, int newCreatedAt)
+        public bool updateEnrolment(Enrolment enr, int newId, int newStudentId, int newCourseId, int newCreatedAt)
         {
-            int index = enrolmentIndex(enr.StudentId);
+            int index = enrolmentIndex(enr.Id);
             if (index != -1)
             {
+                enrolments[index].Id = newId;
                 enrolments[index].StudentId = newStudentId;
                 enrolments[index].CourseId = newCourseId;
                 enrolments[index].CreatedAt = newCreatedAt;
                 saveToFileEnrolment();
-                Console.WriteLine( "Enrolemnt updated " + enr.StudentId);
+                Console.WriteLine( "Enrolmnt updated " + enr.Id);
                 return true;
             }
             Console.WriteLine("Enrolment not updated ");
@@ -112,12 +114,13 @@ namespace OnlineLibrary.Controller
             return allStudents;
         }
 
-        public Enrolment returnEnrolment(int studentId, int courseID, int createdAt)
+        public Enrolment returnEnrolment(int Id, int studentId, int courseID, int createdAt)
         {
             for (int i = 0; i < enrolments.Count; i++)
 
             {
-                if (enrolments[i].StudentId.Equals(studentId)
+                if (enrolments[i].Id.Equals(Id)
+                 && enrolments[i].StudentId.Equals(studentId)
                  && enrolments[i].CourseId.Equals(courseID)
                  && enrolments[i].CreatedAt.Equals(createdAt))
                 { 
@@ -142,17 +145,6 @@ namespace OnlineLibrary.Controller
                 return false;
             }
 
-
         }
-
-
-
-        ///functie ce returneaza toate enrolmenturile unui student 
-        ///5-->functionalitati  pe care ar trbeui sa le contina aplicatia 
-        /*adaugat private EnrolmentController enrolmentController;
-         private CourseController courseController;
-         private BookController bookController;
-        - Adaugat in constructor
-        */
     }
 }

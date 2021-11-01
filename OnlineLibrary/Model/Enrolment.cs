@@ -8,19 +8,28 @@ namespace OnlineLibrary.Model
 {
     public class Enrolment
     {
+        private int id;
         private int studentId;
         private int courseId;
         private int createdAt;//timestamp?
 
         public Enrolment()
         {
-
         }
-        public Enrolment(int studentId, int courseId, int createdAt)
+
+        public Enrolment(int Id,int studentId, int courseId, int createdAt)
         {
+            this.id = Id;
             this.studentId = studentId;
             this.courseId = courseId;
             this.createdAt = createdAt;
+        }
+
+        public int Id
+        {
+            get { return Id; }
+            set { this.Id = value; }
+
         }
         public int StudentId
         {
@@ -41,13 +50,13 @@ namespace OnlineLibrary.Model
         public String EnrolmentDesc()
         {
             string enrolmentPropDesc = "";
-            enrolmentPropDesc += "student id " + this.studentId + "course id" + this.courseId + "created at " + this.createdAt;
+            enrolmentPropDesc += "Id " + this.Id + "student id " + this.studentId + "course id" + this.courseId + "created at " + this.createdAt;
             return enrolmentPropDesc;
         }
 
         public String toSaveEnrolment()
         {
-            return studentId + "," + courseId + "," + createdAt;
+            return Id + ", " + studentId + "," + courseId + "," + createdAt;
         }
 
     }

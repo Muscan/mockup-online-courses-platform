@@ -1,0 +1,7 @@
+﻿AudiA4,Benzina,350,2008,190000,False,Test
+Ford,Motorina,1,2006,290000,False,Jan
+Skoda,Benzina,123,2008,23100,True,Jimmi
+Dacia,Diesel,2005,1200,1220,True,Jan
+Pejo,Benzin,9000,1200,1500,True,Heip
+Tr,Pacura,1555,123,1222,True,Dr
+Bike,Aer,89,899,74,True,
