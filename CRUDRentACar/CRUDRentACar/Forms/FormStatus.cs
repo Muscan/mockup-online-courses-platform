@@ -1,6 +1,7 @@
 ﻿using CRUDRentACar.Classes;
 using CRUDRentACar.Controllers;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CRUDRentACar
@@ -8,6 +9,7 @@ namespace CRUDRentACar
     public partial class FormStatus : Form
     {
         private ListView list;
+        private Button btnClose;
         private ControllerMasina controllerMasina;
 
         public FormStatus()
@@ -18,6 +20,15 @@ namespace CRUDRentACar
             this.Controls.Add(list);
             list.Width = this.Width;
             createTable();
+           /* btnClose = new Button();
+            btnClose.Visible = true;
+            btnClose.Location = new Point(300, 330);
+            btnClose.Text = "Close";
+            btnClose.Width = 120;
+            btnClose.Height = 40;
+            btnClose.BackColor = Color.PaleVioletRed;
+            this.Controls.Add(btnClose);*/
+
         }
 
         public void createTable()
@@ -27,6 +38,11 @@ namespace CRUDRentACar
             list.View = View.Details;
             list.BorderStyle = BorderStyle.Fixed3D;
             list.ForeColor = ForeColor;
+            list.Width = 800;
+            list.Height = 600;
+            this.Controls.Add(list);
+
+      
 
             list.Clear();
             list.Columns.Add("Marca", 100, HorizontalAlignment.Left);
@@ -49,8 +65,12 @@ namespace CRUDRentACar
                 linie.SubItems.Add(masina.getStare().ToString());
                 linie.SubItems.Add(masina.getClient());
                 list.Items.Add(linie);
+
+              
             }
+           
         }
+      
         /*  private void frmStatus_Load(object sender, EventArgs e)
           {
               controllerMasina = new ControllerMasina();
