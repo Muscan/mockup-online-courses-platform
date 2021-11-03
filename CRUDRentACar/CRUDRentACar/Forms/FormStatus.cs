@@ -1,5 +1,6 @@
 ﻿using CRUDRentACar.Classes;
 using CRUDRentACar.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -20,19 +21,22 @@ namespace CRUDRentACar
             this.Controls.Add(list);
             list.Width = this.Width;
             createTable();
-           /* btnClose = new Button();
-            btnClose.Visible = true;
-            btnClose.Location = new Point(300, 330);
-            btnClose.Text = "Close";
-            btnClose.Width = 120;
-            btnClose.Height = 40;
-            btnClose.BackColor = Color.PaleVioletRed;
-            this.Controls.Add(btnClose);*/
+          
 
         }
 
         public void createTable()
         {    //(int id, string name, string department)
+
+            btnClose = new Button();
+            btnClose.Visible = true;
+            btnClose.Location = new Point(610, 310);
+            btnClose.Text = "Close";
+            btnClose.Width = 120;
+            btnClose.Height = 40;
+            btnClose.BackColor = Color.PaleVioletRed;
+            this.Controls.Add(btnClose);
+            btnClose.Click += btnExit_Click;
 
             list.GridLines = true;
             list.View = View.Details;
@@ -77,9 +81,9 @@ namespace CRUDRentACar
               controllerMasina.status(listMasini);
           }*/
 
-        /* private void btnExit_Click(object sender, EventArgs e)
+         private void btnExit_Click(object sender, EventArgs e)
          {
              this.Close();
-         }*/
+         }
     }
 }
