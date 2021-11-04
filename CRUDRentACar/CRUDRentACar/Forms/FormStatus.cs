@@ -20,14 +20,11 @@ namespace CRUDRentACar
             list = new ListView();
             this.Controls.Add(list);
             list.Width = this.Width;
+            CloseBtn();
             createTable();
-          
-
         }
-
-        public void createTable()
-        {    //(int id, string name, string department)
-
+        public void CloseBtn()
+        {
             btnClose = new Button();
             btnClose.Visible = true;
             btnClose.Location = new Point(610, 310);
@@ -37,6 +34,9 @@ namespace CRUDRentACar
             btnClose.BackColor = Color.PaleVioletRed;
             this.Controls.Add(btnClose);
             btnClose.Click += btnExit_Click;
+        }
+        public void createTable()
+        {    //(int id, string name, string department)
 
             list.GridLines = true;
             list.View = View.Details;

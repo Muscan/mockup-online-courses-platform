@@ -1,0 +1,7 @@
+admin,admin,True
+user,user,False
+elev,sofer,False
+ADMIN,ADMIN,True
+bz,bz,True
+us,us,False
+
