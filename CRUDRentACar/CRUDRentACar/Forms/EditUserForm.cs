@@ -69,7 +69,7 @@ namespace CRUDRentACar.Forms
         public void CheckBoxIsAdmin()
         {
             checkBoxAdmin = new CheckBox();
-            checkBoxAdmin.Location = new Point(280, 350);
+            checkBoxAdmin.Location = new Point(280, 330);
             checkBoxAdmin.Width = 120;
             checkBoxAdmin.Height = 30;
             checkBoxAdmin.Text = "Is ADMIN?";
@@ -116,7 +116,7 @@ namespace CRUDRentACar.Forms
         {//left bottom 
             btnCancel = new Button();
             btnCancel.Visible = true;
-            btnCancel.Location = new Point(350, 330);
+            btnCancel.Location = new Point(410, 330);
             btnCancel.Text = "Cancel";
             btnCancel.Width = 120;
             btnCancel.Height = 40;
