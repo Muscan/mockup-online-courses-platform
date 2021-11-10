@@ -153,9 +153,9 @@ namespace CRUDRentACar.Forms
                     if (admin)
                     {
 
-                        FormStatus formStatus = new FormStatus();
+                        ControlPanel controlPanel = new ControlPanel();
 
-                        formStatus.Show();
+                        controlPanel.Show();
                     }
                     else
                     {

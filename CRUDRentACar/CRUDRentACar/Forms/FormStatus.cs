@@ -22,6 +22,7 @@ namespace CRUDRentACar
             list.Width = this.Width;
             CloseBtn();
             createTable();
+
         }
         public void CloseBtn()
         {

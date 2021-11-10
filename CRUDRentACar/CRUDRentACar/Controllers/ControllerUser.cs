@@ -16,6 +16,11 @@ namespace CRUDRentACar.Controllers
             users = new List<User>();
             readUserTxt();
         }
+        //returns all the Users
+        public List<User> GetAllUsers()
+        {
+            return users;
+        }
         //Finds the user index
         public int userIndex(string user)
         {
@@ -189,5 +194,7 @@ namespace CRUDRentACar.Controllers
                 listUsers.Items.Add(linie);
             }
         }
+     
+
     }
 }
