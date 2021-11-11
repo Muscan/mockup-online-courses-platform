@@ -114,8 +114,9 @@ namespace CRUDRentACar.Forms
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditUserForm editUserForm = new EditUserForm();
+            EditUserForm editUserForm = new EditUserForm(control);
             editUserForm.Show();
+            control.AfisareUsers(lstUsers);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

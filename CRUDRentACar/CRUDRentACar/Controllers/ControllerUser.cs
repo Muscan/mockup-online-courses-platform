@@ -8,7 +8,7 @@ using static CRUDRentACar.Controllers.ControllerMasina;
 
 namespace CRUDRentACar.Controllers
 {
-    class ControllerUser
+     public class ControllerUser
     {
         private List<User> users;
         public ControllerUser()
@@ -97,6 +97,21 @@ namespace CRUDRentACar.Controllers
             return false;
         }
 
+        //update User, pw and isAdmin v2
+        public bool updateUser(String oldUser, User newUser)
+        {
+            int index = userIndex(oldUser);
+            if (index != -1)
+            {
+                users[index].setUser(newUser.getUser());
+                users[index].setPassword(newUser.getPassword());
+                users[index].setIsAdmin(newUser.getIsAdmin());
+                saveToFileUserTxt();
+                return true;
+            }
+            MessageBox.Show("User not found.");
+            return false;
+        }
         //delete user
         public bool DeleteUser(string user)
         {

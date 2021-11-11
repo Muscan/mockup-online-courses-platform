@@ -16,25 +16,41 @@ namespace CRUDRentACar.Forms
         private Button btnCancel;
         private Button btnEdit;
         private TextBox txtBoxUserName;
-        //private TextBox txtBoxNewUserName;
+        private TextBox txtBoxNewUserName;
         private TextBox txtBoxPassword;
         private CheckBox checkBoxAdmin;
         private Label lblUser;
         private Label lblNewUser;
         private Label lblPassword;
-        private ControllerUser control;
+        private  ControllerUser control;
         public EditUserForm()
         {
             InitializeComponent();
             CancelBtn();
             EditBtn();
             TextBoxUserName();
+            TextBoxUserNewName();
+            LabelNewUserName();
             TextBoxPassword();
             CheckBoxIsAdmin();
             LabelUserName();
             LabelPassword();
             control = new ControllerUser();
+        }
 
+        public EditUserForm(ControllerUser control)
+        {
+            InitializeComponent();
+            CancelBtn();
+            EditBtn();
+            TextBoxUserName();
+            TextBoxUserNewName();
+            LabelNewUserName();
+            TextBoxPassword();
+            CheckBoxIsAdmin();
+            LabelUserName();
+            LabelPassword();
+            this.control = control;
         }
 
         public void TextBoxUserName()
@@ -47,7 +63,7 @@ namespace CRUDRentACar.Forms
 
         }
 
-    /*    public void TextBoxUserNewName()
+        public void TextBoxUserNewName()
         {
             txtBoxNewUserName = new TextBox();
             txtBoxNewUserName.Location = new Point(280, 150);
@@ -55,7 +71,7 @@ namespace CRUDRentACar.Forms
             txtBoxNewUserName.Height = 30;
             this.Controls.Add(txtBoxNewUserName);
 
-        }*/
+        }
         public void TextBoxPassword()
         {
             txtBoxPassword = new TextBox();
@@ -89,8 +105,8 @@ namespace CRUDRentACar.Forms
 
         }
 
-    /*    public void LabelNewUserName()
-        {
+       public void LabelNewUserName()
+         {
             lblNewUser = new Label();
             lblNewUser.Location = new Point(280, 124);
             lblNewUser.Width = 120;
@@ -99,7 +115,7 @@ namespace CRUDRentACar.Forms
             lblNewUser.Visible = true;
             this.Controls.Add(lblNewUser);
 
-        }*/
+        }
         public void LabelPassword()
         {
             lblPassword = new Label();
@@ -154,17 +170,15 @@ namespace CRUDRentACar.Forms
            }
            else
            {
-               string editUser = txtBoxUserName.Text;
-
+               string oldUser = txtBoxUserName.Text;
+               string newUser = txtBoxNewUserName.Text;
                string editPassword = txtBoxPassword.Text;
                bool isAdmin = checkBoxAdmin.Checked;
-               User usr = new User(editUser, editPassword, isAdmin);
-               control.updateUser(usr);
+               User usr = new User(newUser, editPassword, isAdmin);
+               control.updateUser(oldUser, usr);
                ClearLoginFields(txtBoxUserName, txtBoxPassword);
                checkBoxAdmin.Checked = false;
-
            }
-            
        }
     }
 }

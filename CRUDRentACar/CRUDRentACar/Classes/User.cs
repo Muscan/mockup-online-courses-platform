@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CRUDRentACar.Classes
 {
-    class User
+    public class User
     {
         private string user;
         private string password;

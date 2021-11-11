@@ -22,6 +22,7 @@ namespace CRUDRentACar
             Application.Run(new LoginForm());
             //Application.Run(new Register());
             //Application.Run(new LoginUserRole());
+            //Application.Run(new Menu());
         }
     }
     

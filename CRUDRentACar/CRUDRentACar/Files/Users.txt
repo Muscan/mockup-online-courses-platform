@@ -1,11 +1,11 @@
 admin,admin,True
 user,user,False
 ADMIN,ADMIN,True
-us,us,False
+RO,RO,True
 das,das,True
-drei,123,True
+3,3,False
 user2,user2,False
-brv,brv,False
+brv,brd,True
 JIM,o,True
 jimmy,jmmy,True
 
