@@ -20,18 +20,24 @@ namespace UIForBook
         public Details()
         {
             InitializeComponent();
-
-
+            ViewCourses();
+            ViewBooks();
+            ViewDetails();
+            Back();
+            CloseBtn();
+        }
+        public void ViewCourses()
+        {
             btnView = new Button();
             btnView.Location = new Point(30, 30);
             btnView.Text = "View Courses";
             btnView.Width = 120;
             btnView.Height = 40;
-
-            //btnView.Click += exemplu_Click;
-
-            this.Controls.Add(btnView);
-
+            Controls.Add(btnView);
+            btnView.Click += btnView_Click;
+        }
+        public void ViewBooks()
+        {
             btnBooks = new Button();
             btnBooks.Location = new Point(180, 30);
             btnBooks.Text = "View Books";
@@ -39,7 +45,11 @@ namespace UIForBook
             btnBooks.Height = 40;
             btnBooks.BackColor = Color.Aquamarine;
             this.Controls.Add(btnBooks);
+        }
 
+
+        public void ViewDetails()
+        {
             btnDetails = new Button();
             btnDetails.Location = new Point(330, 30);
             btnDetails.Text = "View Details";
@@ -47,7 +57,10 @@ namespace UIForBook
             btnDetails.Height = 40;
             btnDetails.BackColor = Color.DeepSkyBlue;
             this.Controls.Add(btnDetails);
+        }
 
+        public void Back()
+        {
             btnBack = new Button();
             btnBack.Location = new Point(480, 330);
             btnBack.Text = "Back";
@@ -55,8 +68,12 @@ namespace UIForBook
             btnBack.Height = 40;
             btnBack.BackColor = Color.YellowGreen;
             this.Controls.Add(btnBack);
+           
+        }
 
 
+        public void CloseBtn()
+        {
             btnClose = new Button();
             btnClose.Location = new Point(610, 330);
             btnClose.Text = "Close";
@@ -64,14 +81,23 @@ namespace UIForBook
             btnClose.Height = 40;
             btnClose.BackColor = Color.PaleVioletRed;
             this.Controls.Add(btnClose);
-
+            btnClose.Click += btnClose_Click;
 
         }
 
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            ViewCourses couresForm = new ViewCourses();
+            couresForm.Show();
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void Details_Load(object sender, EventArgs e)
         {
-
         }
     }
-
 }
