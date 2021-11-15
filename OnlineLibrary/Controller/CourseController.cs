@@ -144,5 +144,16 @@ namespace OnlineLibrary.Controller
             }
             return null;
         }
+        public Course ReturnCoursesUsingId(int id)
+        {
+            for (int i = 0; i < courses.Count; i++)
+            {
+                if (courses[i].Id.Equals(id))
+                {
+                    return courses[i];
+                }
+            }
+            return null;
+        }
     }
 }

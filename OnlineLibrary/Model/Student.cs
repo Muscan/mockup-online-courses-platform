@@ -52,7 +52,7 @@ namespace OnlineLibrary.Model
         public String StudentDesc()
         {
             string studentPropDesc = "";
-            studentPropDesc += "Id: " + this.id + ", last name: " + this.lastName + ", email: " + this.email + ", age: " + this.age;
+            studentPropDesc += "Student Id: " + this.id + ", Student last name: " + this.lastName + ", Student email: " + this.email + ", Student age: " + this.age;
             return studentPropDesc;
         }
 

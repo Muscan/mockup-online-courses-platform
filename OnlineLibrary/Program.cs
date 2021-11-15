@@ -12,31 +12,44 @@ namespace OnlineLibrary
     {
         static void Main(string[] args)
         {
+            EnrolmentController controller = new EnrolmentController();
+            CourseController courseController = new CourseController();
+            StudentController studentController = new StudentController();
+            controller.DeleteAll();
+            //courseController.DeleteAll();
+            //studentController.DeleteAll();
+
             /*StudentController controller = new StudentController();
             Student s1 = new Student(1, "Rodni", "email@email.com", 20);
             controller.AddStudent(s1);
             Console.WriteLine(controller.displayAllStudents());*/
 
-            EnrolmentController controller = new EnrolmentController();
-            //Enrolment enr = new Enrolment();
-            //controller.Add(enr);
-            //enr.toSaveEnrolment();
-            //enr.EnrolmentDesc();
-            //controller.StudentEnrolments(10);
-            List<Enrolment> listEnrolments = controller.StudentEnrolments(12);
-            StudentController studentController = new StudentController();
-            Student student = new Student();
-            string myStudent = student.Id.ToString(myStudent);
-            for (int i = 0; i < listEnrolments.Count; i++)
-            {
-                
-                
-                Console.WriteLine(listEnrolments[i].toSaveEnrolment() + myStudent);
+            Enrolment enr1 = new Enrolment(10,10,77,2001);
+            controller.Add(enr1);
+            Console.WriteLine(controller.ReturnEnrolmentUsingId(enr1.Id).EnrolmentDesc());
+
+            Enrolment enr2 = new Enrolment(11, 10, 33, 2022);
+            controller.Add(enr2);
+            Console.WriteLine(controller.ReturnEnrolmentUsingId(enr2.Id).EnrolmentDesc());
+
+            Enrolment enr = new Enrolment(23, 33, 43, 2003);
+            controller.Add(enr);
+            Console.WriteLine(controller.ReturnEnrolmentUsingId(enr.Id).EnrolmentDesc());
+            //List<Enrolment> le = new List<Enrolment>(); //it is already initialized in EnrolmentController
+            //calling the method StudentEnrolments I need to call the object which contains that method
+            
+            Student student = studentController.ReturnStudentUsingId(10);
+            List<Enrolment> le = controller.StudentEnrolments(student.Id);
+
+            
+            Console.WriteLine("Student with id " + student.Id + " with name " + student.LastName + " is enrolled at " );
+            for (int i = 0; i < le.Count; i++)
+            {//for each enrollment there is a new course
+                Course course = courseController.ReturnCoursesUsingId(le[i].CourseId);
+                //Console.WriteLine("Course ID: " + course.Id + " department name: " + course.Name + " Faculty: " + course.Department );
+                Console.WriteLine(course.CourseDesc());
             }
-
             Console.ReadLine();
-
-
         }
     }
    

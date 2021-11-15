@@ -133,6 +133,19 @@ namespace OnlineLibrary.Controller
             }
             return null;
         }
+
+        public Enrolment ReturnEnrolmentUsingId(int Id)
+        {
+            for (int i = 0; i < enrolments.Count; i++)
+
+            {
+                if (enrolments[i].Id.Equals(Id))
+                {
+                    return enrolments[i];
+                }
+            }
+            return null;
+        }
         public bool deleteEnrolment(int id)
         {
             int index = enrolmentIndex(id);
@@ -152,8 +165,9 @@ namespace OnlineLibrary.Controller
         }
 
 
-        //functie ce primeste ca paratru id
+        //functie ce primeste ca parametru  id-ul
         //studentului si returneaza toate enrolmenturile stundentului
+        //Method which returns an Object of type <List>Enrolment
         public List<Enrolment> StudentEnrolments(int id)
         {
             List<Enrolment> list = new List<Enrolment>();
@@ -162,18 +176,11 @@ namespace OnlineLibrary.Controller
             {
                 if (e.StudentId == id)
                 {
-
                     list.Add(e);
-
                 }
             }
 
             return list;
         }
-
-
-
-
-
     }
 }

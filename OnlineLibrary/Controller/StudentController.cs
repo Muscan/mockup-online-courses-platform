@@ -137,6 +137,20 @@ namespace OnlineLibrary.Controller
             }
             return null;
         }
+
+        public Student ReturnStudentUsingId(int id)
+        {
+            for (int i = 0; i < students.Count; i++)
+
+            {
+                if (students[i].Id.Equals(id)
+                 )
+                {
+                    return students[i];
+                }
+            }
+            return null;
+        }
         public String displayAllStudents()
         {
             string allStudents = "";

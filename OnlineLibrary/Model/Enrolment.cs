@@ -50,7 +50,7 @@ namespace OnlineLibrary.Model
         public String EnrolmentDesc()
         {
             string enrolmentPropDesc = "";
-            enrolmentPropDesc += "Id " + this.Id + "student id " + this.studentId + "course id" + this.courseId + "created at " + this.createdAt;
+            enrolmentPropDesc += "Enrolment Id: " + this.Id + ", student id: " + this.studentId + ", course id: " + this.courseId + ", created at: " + this.createdAt;
             return enrolmentPropDesc;
         }
 

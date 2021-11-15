@@ -43,7 +43,7 @@ namespace OnlineLibrary.Model
         public String CourseDesc()
         {
             string coursePropDesc = "";
-            coursePropDesc += "Id " + this.id + "Department name " + this.name + "department " + this.department;
+            coursePropDesc += "Course ID " + this.id + " department name: " + this.name + " Faculty: " + this.department;
             return coursePropDesc;
         }
 
