@@ -48,11 +48,14 @@ namespace OnlineLibrary.Controller
         }
         public void loadEnrolment()
         {
+
             StreamReader reader = new StreamReader(@"D:\C# Basics\OnlineLibrary\OnlineLibrary\Files\Enrolments.txt");
             String line = "";
             line = reader.ReadLine();
             while (line != "" && line != null)
+            //while ((line = reader.ReadLine())!=null)
             {
+               
                 String[] enrolmentForFile = line.Split(',');
                 //(int studentId, int courseId, int createdAt)
                 int Id = int.Parse(enrolmentForFile[0]);
@@ -62,6 +65,7 @@ namespace OnlineLibrary.Controller
                 Enrolment enrolment = new Enrolment(Id, studentId, courseId, createdAt);
                 enrolments.Add(enrolment);
                 line = reader.ReadLine();
+
             }
             reader.Close();
             
@@ -146,5 +150,30 @@ namespace OnlineLibrary.Controller
             }
 
         }
+
+
+        //functie ce primeste ca paratru id
+        //studentului si returneaza toate enrolmenturile stundentului
+        public List<Enrolment> StudentEnrolments(int id)
+        {
+            List<Enrolment> list = new List<Enrolment>();
+
+            foreach(Enrolment e in enrolments)
+            {
+                if (e.StudentId == id)
+                {
+
+                    list.Add(e);
+
+                }
+            }
+
+            return list;
+        }
+
+
+
+
+
     }
 }

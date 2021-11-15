@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineLibrary.Tests", "Onli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIForBook", "UIForBook\UIForBook.csproj", "{69683DA1-3115-48E8-A3EC-B7EB505A4FCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDRentACar", "CRUDRentACar\CRUDRentACar\CRUDRentACar.csproj", "{64BF9B38-DAAD-4F22-A762-B85476CC937E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{69683DA1-3115-48E8-A3EC-B7EB505A4FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69683DA1-3115-48E8-A3EC-B7EB505A4FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69683DA1-3115-48E8-A3EC-B7EB505A4FCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64BF9B38-DAAD-4F22-A762-B85476CC937E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64BF9B38-DAAD-4F22-A762-B85476CC937E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64BF9B38-DAAD-4F22-A762-B85476CC937E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64BF9B38-DAAD-4F22-A762-B85476CC937E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

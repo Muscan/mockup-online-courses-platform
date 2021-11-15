@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineLibrary.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIForBook.Forms;
 //Entry program
 namespace UIForBook
 {
@@ -17,14 +19,21 @@ namespace UIForBook
         private Button btnBooks;
         private Button btnBack;
         private Button btnClose;
+        private Button btnEnrolments;
+
+        private Student student;
+        
         public Details()
         {
             InitializeComponent();
             ViewCourses();
             ViewBooks();
             ViewDetails();
+            EnrolmentsBtn();
             Back();
             CloseBtn();
+            student = new Student(10, "Jimmy", "mail@aol.hu", 85);
+           
         }
         public void ViewCourses()
         {
@@ -59,6 +68,18 @@ namespace UIForBook
             this.Controls.Add(btnDetails);
         }
 
+        public void EnrolmentsBtn()
+        {
+            btnEnrolments = new Button();
+            btnEnrolments.Location = new Point(480, 30);
+            btnEnrolments.Text = "Enrolments";
+            btnEnrolments.Width = 120;
+            btnEnrolments.Height = 40;
+            btnEnrolments.BackColor = Color.AliceBlue;
+            this.Controls.Add(btnEnrolments);
+            btnEnrolments.Click += btnEnrolments_Click;
+        }
+
         public void Back()
         {
             btnBack = new Button();
@@ -84,6 +105,7 @@ namespace UIForBook
             btnClose.Click += btnClose_Click;
 
         }
+       
 
         private void btnView_Click(object sender, EventArgs e)
         {
@@ -98,6 +120,11 @@ namespace UIForBook
         }
         private void Details_Load(object sender, EventArgs e)
         {
+        }
+        private void btnEnrolments_Click(object sender, EventArgs eventArgs)
+        {
+            ViewEnrolments formEnrolments = new ViewEnrolments(student);
+            formEnrolments.Show();
         }
     }
 }

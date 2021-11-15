@@ -13,9 +13,6 @@ namespace OnlineLibrary.Model
         private string lastName;
         private string email;
         private int age;
-        private EnrolmentController enrolmentController;
-        private CourseController courseController;
-        private BookController bookController;
 
         public Student()
         {
@@ -27,9 +24,7 @@ namespace OnlineLibrary.Model
             this.lastName = lastName;
             this.email = email;
             this.age = age;
-            enrolmentController = new EnrolmentController();
-            courseController = new CourseController();
-            bookController = new BookController();
+          
         }
 
         public int Id
@@ -53,22 +48,7 @@ namespace OnlineLibrary.Model
             set { this.age = value; }
         }
 
-        public EnrolmentController EnrolmentController
-        {
-            get { return enrolmentController; }
-            set { this.enrolmentController = value; }
-        }
-        public CourseController CourseController
-        {
-            get { return courseController; }
-            set { this.courseController = value; }
-        }
-
-        public BookController BookController
-        {
-            get { return bookController; }
-            set { this.bookController = value; }
-        }
+      
         public String StudentDesc()
         {
             string studentPropDesc = "";

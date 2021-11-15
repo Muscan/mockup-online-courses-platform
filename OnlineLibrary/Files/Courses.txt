@@ -1,2 +1,4 @@
-0,Name 0,Department 0
-
+11,StiinteNaturale,Biologie
+33,MatematiciFine,Math
+44,CompozitieMuzicala,Muzica
+56,Sociologie,Istorie

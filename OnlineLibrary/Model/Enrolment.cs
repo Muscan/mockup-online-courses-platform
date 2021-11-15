@@ -27,8 +27,8 @@ namespace OnlineLibrary.Model
 
         public int Id
         {
-            get { return Id; }
-            set { this.Id = value; }
+            get { return this.id; }
+            set { this.id = value; }
 
         }
         public int StudentId

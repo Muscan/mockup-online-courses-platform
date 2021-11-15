@@ -1,12 +1,1 @@
-100,100,Harbe0
-101,101,Harbe1
-2,2,Wiederk 2
-3,3,Wiederk 3
-4,4,Wiederk 4
-5,5,Wiederk 5
-6,6,Wiederk 6
-7,7,Wiederk 7
-8,8,Wiederk 8
-9,9,Wiederk 9
-1,1,FirstBook 
 

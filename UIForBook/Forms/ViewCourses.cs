@@ -10,27 +10,34 @@ namespace UIForBook
         private ListView list;
 
         private CourseController controlCourse;
+
+
+        
         
         public ViewCourses()
         {
+            
+
             InitializeComponent();
             controlCourse = new CourseController();
+           
             list = new ListView();
             this.Controls.Add(list);
             list.Width = this.Width;
             createTable();
+       
         }
-
+        
         public void createTable()
-        {    //(int id, string name, string department)
+        {    //(int id course, string course name, string department)
 
             list.GridLines = true;
             list.View = View.Details;
             list.BorderStyle = BorderStyle.Fixed3D;
             list.ForeColor = ForeColor;
            
-            list.Columns.Add("ID ", 100, HorizontalAlignment.Left);
-            list.Columns.Add("Name ", 100, HorizontalAlignment.Center);
+            list.Columns.Add("ID Course", 100, HorizontalAlignment.Left);
+            list.Columns.Add("Name Course", 100, HorizontalAlignment.Center);
             list.Columns.Add("Department ", 100, HorizontalAlignment.Right);
 
             List<Course> l = controlCourse.getAllCourses();
@@ -42,6 +49,11 @@ namespace UIForBook
                 row.SubItems.Add(course.Department);
                 list.Items.Add(row);
             }
+        }
+
+        private void ViewCourses_Load(object sender, System.EventArgs e)
+        {
+
         }
     }
 }
