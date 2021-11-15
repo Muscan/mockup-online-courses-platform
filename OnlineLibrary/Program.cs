@@ -18,11 +18,9 @@ namespace OnlineLibrary
             controller.DeleteAll();
             //courseController.DeleteAll();
             //studentController.DeleteAll();
-
-            /*StudentController controller = new StudentController();
-            Student s1 = new Student(1, "Rodni", "email@email.com", 20);
-            controller.AddStudent(s1);
-            Console.WriteLine(controller.displayAllStudents());*/
+            Student std = new Student(50, "Opa", "mail@aol.com", 49);
+            studentController.AddStudent(std);
+            Console.WriteLine(studentController.ReturnStudentUsingId(std.Id));
 
             Enrolment enr1 = new Enrolment(10,10,77,2001);
             controller.Add(enr1);
