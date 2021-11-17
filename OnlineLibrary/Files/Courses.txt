@@ -3,3 +3,5 @@
 44,CompozitieMuzicala,Muzica
 56,Sociologie,Istorie
 77,Swim,Sport
+1002,NewMatematici,NewDepartament
+

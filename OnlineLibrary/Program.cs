@@ -16,7 +16,13 @@ namespace OnlineLibrary
             CourseController courseController = new CourseController();
             StudentController studentController = new StudentController();
             controller.DeleteAll();
-            
+
+            Course course1 = new Course(1001, "MatematicaFina", "Matematica");
+            courseController.Add(course1);
+            Console.WriteLine(courseController.ReturnCoursesUsingId(course1.Id).CourseDesc());
+            courseController.updateCourse(course1, 1002, "NewMatematici", "NewDepartament");
+            courseController.deleteCourse(1001);
+
             //courseController.DeleteAll();
             //studentController.DeleteAll();
             Student std = new Student(50, "Opa", "mail@aol.com", 49);
@@ -29,6 +35,7 @@ namespace OnlineLibrary
             //studentController.updateStudent(student1, 101, "NewName", "NewEmail", 20);
             studentController.AddStudent(student1);
             Console.WriteLine(studentController.ReturnStudentUsingId(student1.Id).StudentDesc());
+            studentController.updateStudent(student1,100, "NewStudent", "NewEmail", 20);
             //Keep the house clean
             studentController.deleteStudent(100);
             
@@ -47,6 +54,10 @@ namespace OnlineLibrary
             Enrolment enr = new Enrolment(23, 33, 43, 2003);
             controller.Add(enr);
             Console.WriteLine(controller.ReturnEnrolmentUsingId(enr.Id).EnrolmentDesc());
+
+
+            //Update Enrolment
+            controller.updateEnrolment(enr, 23, 33, 43, 2003);
             //List<Enrolment> le = new List<Enrolment>(); //it is already initialized in EnrolmentController
             //calling the method StudentEnrolments I need to call the object which contains that method
 
