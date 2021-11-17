@@ -18,9 +18,9 @@ namespace OnlineLibrary.Model
         {
         }
 
-        public Student(int id, string lastName, string email, int age)
+        public Student(int Id, string lastName, string email, int age)
         {
-            this.id = id;
+            this.id = Id;
             this.lastName = lastName;
             this.email = email;
             this.age = age;
@@ -52,7 +52,7 @@ namespace OnlineLibrary.Model
         public String StudentDesc()
         {
             string studentPropDesc = "";
-            studentPropDesc += "Student Id: " + this.id + ", Student last name: " + this.lastName + ", Student email: " + this.email + ", Student age: " + this.age;
+            studentPropDesc += "Student Id: " + this.Id + ", Student last name: " + this.lastName + ", Student email: " + this.email + ", Student age: " + this.age;
             return studentPropDesc;
         }
 

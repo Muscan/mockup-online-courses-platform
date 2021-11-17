@@ -106,7 +106,7 @@ namespace OnlineLibrary.Controller
             if (index != -1)
             {
                 students.RemoveAt(index);
-                Console.WriteLine("Student deleted ");
+                Console.WriteLine("Student was deleted ");
                 saveStudent();
                 return true;
             }
@@ -138,12 +138,12 @@ namespace OnlineLibrary.Controller
             return null;
         }
 
-        public Student ReturnStudentUsingId(int id)
+        public Student ReturnStudentUsingId(int Id)
         {
             for (int i = 0; i < students.Count; i++)
 
             {
-                if (students[i].Id.Equals(id)
+                if (students[i].Id.Equals(Id)
                  )
                 {
                     return students[i];
@@ -151,6 +151,7 @@ namespace OnlineLibrary.Controller
             }
             return null;
         }
+
         public String displayAllStudents()
         {
             string allStudents = "";
