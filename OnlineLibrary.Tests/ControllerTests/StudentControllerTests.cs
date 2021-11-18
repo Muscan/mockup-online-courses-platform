@@ -29,20 +29,23 @@ namespace UnitTestsForOnlineLibrary
                 controller.AddStudent(s1);
                 output.WriteLine(s1.StudentDesc());
             }
+
             return controller;
         }
-        [Fact]
+       [Fact]
         public void AddStudentIsDisplayedAndDeleted()
         {
             StudentController studentController = new StudentController();
             Student s1 = new Student(1, "Rodni", "email@email.com", 20);
             //Student s2 = new Student(1, "Rodni", "email@email.com", 20);
             studentController.AddStudent(s1);
-            output.WriteLine(studentController.displayAllStudents());
-            Assert.Equal(s1, studentController.returnStudent(1, "Rodni", "email@email.com", 20));
+            //output.WriteLine(studentController.displayAllStudents());
+            Assert.Equal(1, studentController.ReturnStudentUsingId(1).Id);
             studentController.deleteStudent(1);//it should delete student with id 1
-        }
 
+
+        }
+        
         [Fact]
         public void AddUpdateDelete10Students()
         {
@@ -58,7 +61,7 @@ namespace UnitTestsForOnlineLibrary
             {
                 Assert.Equal(listStudents[i], controllerStudents.returnStudent(i + 10, "NewLastName" + i, "NewEmail" + i, i + 10));
             }
-            controllerStudents.DeleteAll();
+            
         }
         [Fact]
         public void DisplayIndex()
@@ -72,10 +75,10 @@ namespace UnitTestsForOnlineLibrary
                 output.WriteLine("Actual:" + indexTested + "." + "Index Expected: " + i); //listStudents[i].StudentDesc());
 
             }
-            controllerStudents.DeleteAll();
+            //controllerStudents.DeleteAll();
         }
 
-        [Fact]
+        /*[Fact]
         public void DeleteStudent()
         {
             StudentController controllerStudents = Add10Students();
@@ -87,7 +90,7 @@ namespace UnitTestsForOnlineLibrary
             }
             output.WriteLine("Students deleted");
 
-        }
+        }*/
         [Fact]
         public void DeleteASpecificStudent()
         {
@@ -97,7 +100,24 @@ namespace UnitTestsForOnlineLibrary
                 Assert.True(userDeleted);
             output.WriteLine("Student \'"+ idUsed +"\' deleted");
             output.WriteLine(controllerStudents.displayAllStudents());
-            controllerStudents.DeleteAll();
+            //controllerStudents.DeleteAll();
+        }
+
+        [Fact]
+        public void DisplayStudentUsingId()
+        {
+            StudentController cs = Add10Students();
+            List<Student> listStudents = cs.getAllStudents();
+
+            for (int i = 0; i <listStudents.Count; i++)
+            {
+
+                output.WriteLine(listStudents[i].StudentDesc());
+
+            }
+            
+            output.WriteLine("Students displayed");
+
         }
     }
 }

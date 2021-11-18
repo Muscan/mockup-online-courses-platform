@@ -11,7 +11,9 @@ namespace OnlineLibrary.Controller
     public class EnrolmentController
     {
         private List<Enrolment> enrolments;
+
         public EnrolmentController()
+
         {
             enrolments = new List<Enrolment>();
             loadEnrolment();
@@ -77,7 +79,7 @@ namespace OnlineLibrary.Controller
             {
                 this.enrolments.Add(enrolment);
                 this.saveToFileEnrolment();
-                Console.WriteLine("Enrolment addded");
+                Console.WriteLine("Enrolment addded" + enrolment.Id);
                 return true;
             }
             Console.WriteLine("Enrolment exists ");

@@ -32,7 +32,7 @@ namespace UnitTestsForOnlineLibrary
             return controller;
         }
 
-        [Fact]
+       /* [Fact]
         public void AddCourseIsDisplayedAndDeleted()
         {
             CourseController controller = new CourseController();
@@ -40,8 +40,8 @@ namespace UnitTestsForOnlineLibrary
             controller.Add(s1);
             output.WriteLine(controller.displayAllCourses());
             Assert.Equal(s1, controller.returnCourses(1, "Course ", "Spanish"));
-            controller.DeleteAll();//it should delete enrolment with id 1
-        }
+            controller.deleteCourse(1);//it should delete enrolment with id 1
+        }*/
 
         [Fact]
         public void AddUpdateDelete10Enrolments()
@@ -59,7 +59,7 @@ namespace UnitTestsForOnlineLibrary
             {
                 Assert.Equal(lstCourse[i], controller.returnCourses(i + 10, "NewCourse " + i, "NewDepartment " + i));
             }
-            controller.DeleteAll();
+            //controller.DeleteAll();
         }
         [Fact]
         public void DisplayIndex()
@@ -73,7 +73,7 @@ namespace UnitTestsForOnlineLibrary
                 output.WriteLine("Actual:" + indexTested + "." + "Index Expected: " + i);
 
             }
-            controller.DeleteAll();
+            //controller.DeleteAll();
         }
 
         [Fact]
@@ -86,10 +86,24 @@ namespace UnitTestsForOnlineLibrary
                 Assert.True(courseDeleted);
 
             }
-            output.WriteLine("Courses deleted ");
 
+            output.WriteLine("Courses deleted ");
         }
-   
+
+        [Fact]
+        public void DisplayCourseUsingId()
+        {
+            CourseController cc = Add10Courses();
+            List<Course> lc = cc.getAllCourses();
+            for (int i = 0; i < lc.Count; i++)
+            {
+                output.WriteLine(lc[i].CourseDesc());
+
+            }
+
+            output.WriteLine("Course using ID is displayed");
+        }
+
     }
 
 }

@@ -50,6 +50,7 @@
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Enrolment.cs" />
+    <Compile Include="Model\Ignore.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

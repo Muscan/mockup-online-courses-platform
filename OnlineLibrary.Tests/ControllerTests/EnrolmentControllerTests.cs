@@ -33,7 +33,7 @@ namespace UnitTestsForOnlineLibrary
             }
             return controller;
         }
-        [Fact]
+        /*[Fact]
         public void AddEnrolmentIsDisplayedAndDeleted()
         {
             EnrolmentController controller = new EnrolmentController();
@@ -41,8 +41,8 @@ namespace UnitTestsForOnlineLibrary
             controller.Add(s1);
             output.WriteLine(controller.displayAllEnrolments());
             Assert.Equal(s1, controller.returnEnrolment(1, 10, 12, 20));
-            controller.DeleteAll();//it should delete enrolment with id 1
-        }
+            controller.deleteEnrolment(1);//it should delete enrolment with id 1
+        }*/
 
         [Fact]
         public void AddUpdateDelete10Enrolments()
@@ -60,7 +60,7 @@ namespace UnitTestsForOnlineLibrary
             {
                 Assert.Equal(listEnrolments[i], controller.returnEnrolment(i + 10, i + 10, i + 10, i + 10));
             }
-            controller.DeleteAll();
+            //controller.DeleteAll();
         }
         [Fact]
         public void DisplayIndex()
@@ -74,7 +74,7 @@ namespace UnitTestsForOnlineLibrary
                 output.WriteLine("Actual:" + indexTested + "." + "Index Expected: " + i);
 
             }
-            controller.DeleteAll();
+            //controller.DeleteAll();
         }
 
         [Fact]
@@ -101,7 +101,7 @@ namespace UnitTestsForOnlineLibrary
             Assert.True(enrDeleted);
             output.WriteLine("Enrolment \'" + idUsed + "\' deleted");
             output.WriteLine(controller.displayAllEnrolments());
-            controller.DeleteAll();
+            //controller.DeleteAll();
         }
 
         [Fact]
@@ -116,9 +116,21 @@ namespace UnitTestsForOnlineLibrary
                 output.WriteLine(listaEnrolment[i].toSaveEnrolment());
 
             }
+        }
 
+        [Fact]
+        public void DisplayAllEnrolemntsForAStudent()
+        {
+            EnrolmentController controller = new EnrolmentController();
+            StudentController studentController = new StudentController();
+            List<Enrolment> le = controller.StudentEnrolments(10);
 
+            for (int i = 0; i < le.Count; i++)
+            {
 
+                Student student  = studentController.ReturnStudentUsingId(le[i].CourseId);
+                output.WriteLine("Enrolments for student"+ student.StudentDesc());
+            }
         }
     }
 }
